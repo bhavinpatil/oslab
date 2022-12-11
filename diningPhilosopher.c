@@ -19,10 +19,10 @@ void wait(int s)
     }
     else if (p[s] == 1)
     {
-        char status;
-        printf("Do Philosopher %d wants to stop eating ? \n", s);
-        scanf("%s", &status);
-        if ((status == "Y") || (status == "y"))
+        int status;
+        printf("Do Philosopher %d wants to stop eating ?(0/1) \n", s);
+        scanf("%d", &status);
+        if (status == 0)
             signal(s);
     }
     else
@@ -33,7 +33,7 @@ void wait(int s)
 
 int main()
 {
-    char status;
+    int status;
 
     for (int i = 1; i <= 5; i++)
     {
@@ -59,8 +59,8 @@ int main()
         printf("Which Philosopher wants to eat ? \n");
         scanf("%d", &s);
         wait(s);
-        printf("Do you want to continue(Y/N) ? \n");
-        scanf("%s", &status);
-    } while ((status != "N") || (status != "n"));
+        printf("Do you want to continue(0/1) ? \n");
+        scanf("%d", &status);
+    } while (status == 0);
     return 0;
 }
