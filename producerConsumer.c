@@ -54,11 +54,6 @@ int main()
 
     pthread_join(prod, NULL);
     pthread_join(cons, NULL);
-
-    sem_destroy(&empty);
-    sem_destroy(&full);
-    sem_destroy(&S);
-
     return 0;
 
 }
