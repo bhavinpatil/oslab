@@ -1,5 +1,0 @@
-STRING='VITVITVIITVIT'
-
-SUB_STRING='VIT'
-
-gawk 'END { print NR - 1 }' RS="$SUB_STRING" <<< "$STRING"
